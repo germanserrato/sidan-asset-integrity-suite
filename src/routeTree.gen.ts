@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VersionesRouteImport } from './routes/versiones'
+import { Route as VerificacionRouteImport } from './routes/verificacion'
+import { Route as SimulacionRouteImport } from './routes/simulacion'
+import { Route as RecuperacionRouteImport } from './routes/recuperacion'
+import { Route as ModelosRouteImport } from './routes/modelos'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ConfiguracionRouteImport } from './routes/configuracion'
+import { Route as AuditoriaRouteImport } from './routes/auditoria'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VersionesRoute = VersionesRouteImport.update({
+  id: '/versiones',
+  path: '/versiones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificacionRoute = VerificacionRouteImport.update({
+  id: '/verificacion',
+  path: '/verificacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulacionRoute = SimulacionRouteImport.update({
+  id: '/simulacion',
+  path: '/simulacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuperacionRoute = RecuperacionRouteImport.update({
+  id: '/recuperacion',
+  path: '/recuperacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelosRoute = ModelosRouteImport.update({
+  id: '/modelos',
+  path: '/modelos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracionRoute = ConfiguracionRouteImport.update({
+  id: '/configuracion',
+  path: '/configuracion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditoriaRoute = AuditoriaRouteImport.update({
+  id: '/auditoria',
+  path: '/auditoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auditoria': typeof AuditoriaRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/dashboard': typeof DashboardRoute
+  '/modelos': typeof ModelosRoute
+  '/recuperacion': typeof RecuperacionRoute
+  '/simulacion': typeof SimulacionRoute
+  '/verificacion': typeof VerificacionRoute
+  '/versiones': typeof VersionesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auditoria': typeof AuditoriaRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/dashboard': typeof DashboardRoute
+  '/modelos': typeof ModelosRoute
+  '/recuperacion': typeof RecuperacionRoute
+  '/simulacion': typeof SimulacionRoute
+  '/verificacion': typeof VerificacionRoute
+  '/versiones': typeof VersionesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auditoria': typeof AuditoriaRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/dashboard': typeof DashboardRoute
+  '/modelos': typeof ModelosRoute
+  '/recuperacion': typeof RecuperacionRoute
+  '/simulacion': typeof SimulacionRoute
+  '/verificacion': typeof VerificacionRoute
+  '/versiones': typeof VersionesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auditoria'
+    | '/configuracion'
+    | '/dashboard'
+    | '/modelos'
+    | '/recuperacion'
+    | '/simulacion'
+    | '/verificacion'
+    | '/versiones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auditoria'
+    | '/configuracion'
+    | '/dashboard'
+    | '/modelos'
+    | '/recuperacion'
+    | '/simulacion'
+    | '/verificacion'
+    | '/versiones'
+  id:
+    | '__root__'
+    | '/'
+    | '/auditoria'
+    | '/configuracion'
+    | '/dashboard'
+    | '/modelos'
+    | '/recuperacion'
+    | '/simulacion'
+    | '/verificacion'
+    | '/versiones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditoriaRoute: typeof AuditoriaRoute
+  ConfiguracionRoute: typeof ConfiguracionRoute
+  DashboardRoute: typeof DashboardRoute
+  ModelosRoute: typeof ModelosRoute
+  RecuperacionRoute: typeof RecuperacionRoute
+  SimulacionRoute: typeof SimulacionRoute
+  VerificacionRoute: typeof VerificacionRoute
+  VersionesRoute: typeof VersionesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/versiones': {
+      id: '/versiones'
+      path: '/versiones'
+      fullPath: '/versiones'
+      preLoaderRoute: typeof VersionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verificacion': {
+      id: '/verificacion'
+      path: '/verificacion'
+      fullPath: '/verificacion'
+      preLoaderRoute: typeof VerificacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulacion': {
+      id: '/simulacion'
+      path: '/simulacion'
+      fullPath: '/simulacion'
+      preLoaderRoute: typeof SimulacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recuperacion': {
+      id: '/recuperacion'
+      path: '/recuperacion'
+      fullPath: '/recuperacion'
+      preLoaderRoute: typeof RecuperacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/modelos': {
+      id: '/modelos'
+      path: '/modelos'
+      fullPath: '/modelos'
+      preLoaderRoute: typeof ModelosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracion': {
+      id: '/configuracion'
+      path: '/configuracion'
+      fullPath: '/configuracion'
+      preLoaderRoute: typeof ConfiguracionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auditoria': {
+      id: '/auditoria'
+      path: '/auditoria'
+      fullPath: '/auditoria'
+      preLoaderRoute: typeof AuditoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +217,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditoriaRoute: AuditoriaRoute,
+  ConfiguracionRoute: ConfiguracionRoute,
+  DashboardRoute: DashboardRoute,
+  ModelosRoute: ModelosRoute,
+  RecuperacionRoute: RecuperacionRoute,
+  SimulacionRoute: SimulacionRoute,
+  VerificacionRoute: VerificacionRoute,
+  VersionesRoute: VersionesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
