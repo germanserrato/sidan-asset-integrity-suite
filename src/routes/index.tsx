@@ -6,7 +6,7 @@ import { login } from "@/services/sidanApi";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SIDAN — Sistema de Integridad y Defensa de Activos Numéricos" },
+      { title: "SIDAN — Sistema Integral de Diagnostico,Aseguramiento y Normalización de la Resilencia Digital en Modelos Hidrológicos" },
       { name: "description", content: "Inicie sesión en SIDAN para gestionar la integridad de modelos numéricos." },
     ],
   }),
